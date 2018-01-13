@@ -1,20 +1,61 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<!-- 数字： <input type="text" [cleave]="option1"/>
+时间： <input type="text" [cleave]="option2" /> -->
+<!-- 信用卡：<input type="text" [cleave]="creditCardOption"> -->
+<!-- 时间： <input type="text" cleave="date">
+信用卡：<input type="text" cleave="creditCard"> -->
+
+<!-- <div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="text-center mb-10">
+      <h2>Custom</h2>
+      <p>blocks: [2, 2, 3]<br>delimiters: ['.', '#']</p>
+
+      <input cleave [blocks]="[2, 2, 3]" [delimiters]="['.', '#']" class="form-control" placeholder="XX.YY#ZZZZ" [(ngModel)]="custom" />
+      <input cleave [blocks]="[3, 4, 4]" [options]="options" [numericOnly]="true" class="form-control" placeholder="XX.YY#ZZZ" [(ngModel)]="phone" (onInput)="getPhone($event)"/>
+    </div>
+    <pre>Custom: {{ custom }}</pre>
+    <pre>phone: {{ phone }}</pre>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="text-center mb-10">
+      <h2>使用带小数点的数字</h2>
+      <p>numeral: true, numeralDecimalScale: 4, delimiter: ','</p>
+      <input cleave [numeral]="true" [numeralDecimalScale]="4" [delimiter]="','"  class="form-control" placeholder="100.0000" [(ngModel)]="num1" />
+    </div>
+    <pre>num1: {{ num1 }}</pre>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<hr />
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="text-center mb-10">
+      <h2>纯数字</h2>
+      <p>numeral: true, numericOnly: true</p>
+
+      <input cleave [numeral]="true" [numericOnly]="true" [maxLength]="11"
+        class="form-control" placeholder="1,234,567,890" [(ngModel)]="num2"/>
+      </div>
+      <pre>num2: {{ num2 }}</pre>
+  </div>
+</div>
+<hr />
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="text-center mb-10">
+      <h2>带小数点的数字</h2>
+      <p>blocks: [2, 2, 3]<br>delimiters: ['.', '#']</p>
+
+      <input cleave [numeralDecimalMark]="'.'"  [numeralDecimalScale]="2" class="form-control" placeholder="234.89" [(ngModel)]="decimal"/>
+      </div>
+      <pre>decimal: {{ decimal }}</pre>
+  </div>
+</div>
+
+
+
 
