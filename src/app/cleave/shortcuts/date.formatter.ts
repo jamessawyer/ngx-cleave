@@ -76,8 +76,6 @@ export class DateFormatter {
             }
         });
 
-        console.log('有效时间。。。', result);
-
         return this.getFixedDateString(result);
     }
 

@@ -1,24 +1,4 @@
-<!-- 数字： <input type="text" [cleave]="option1"/>
-时间： <input type="text" [cleave]="option2" /> -->
-<!-- 信用卡：<input type="text" [cleave]="creditCardOption"> -->
-<!-- 时间： <input type="text" cleave="date">
-信用卡：<input type="text" cleave="creditCard"> -->
-
 <!-- <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="text-center mb-10">
-      <h2>Custom</h2>
-      <p>blocks: [2, 2, 3]<br>delimiters: ['.', '#']</p>
-
-      <input cleave [blocks]="[2, 2, 3]" [delimiters]="['.', '#']" class="form-control" placeholder="XX.YY#ZZZZ" [(ngModel)]="custom" />
-      <input cleave [blocks]="[3, 4, 4]" [options]="options" [numericOnly]="true" class="form-control" placeholder="XX.YY#ZZZ" [(ngModel)]="phone" (onInput)="getPhone($event)"/>
-    </div>
-    <pre>Custom: {{ custom }}</pre>
-    <pre>phone: {{ phone }}</pre>
-  </div>
-</div> -->
-
-<div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="text-center mb-10">
       <h2>使用带小数点的数字，默认2位</h2>
@@ -61,18 +41,26 @@
     <pre>num3: {{ num3 }}</pre>
   </div>
 </div>
-<hr />
+<hr /> -->
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="text-center mb-10">
       <h2>日期</h2>
-      <p>模拟手机号</p>
-      <p>numericOnly: true, blocks: [3, 4, 4], delimiter: ' '</p>
-      <input cleave [numericOnly]="true" [blocks]="[3, 4, 4]" [delimiter]="' '" class="form-control" placeholder="131 8899 7766"
-        [(ngModel)]="num3" />
+      <p>由于未知bug，这里必须要再次声明一次 delimiter blocks/p>
+      <p>年/月/日: delimiter: '/', blocks: [4, 2, 2]</p>
+      <p>年-月: delimiter: '-', blocks: [4, 2], datePattern: ['Y', 'm']</p>
+      <p>月-日： delimiter: '-', blocks: [2, 2], datePattern: ['m', 'd']</p>
+      <input cleave [date]="true" [delimiter]="'/'" [blocks]="[4, 2, 2]" class="form-control" placeholder="YYYY/mm/dd"
+        [(ngModel)]="date1" />  
+      <input cleave [date]="true" [datePattern]="['Y', 'm']" [delimiter]="'-'" [blocks]="[4, 2]" class="form-control" placeholder="YYYY-mm"
+        [(ngModel)]="date2" />  
+      <input cleave [date]="true" [datePattern]="['m', 'd']" [delimiter]="'-'" [blocks]="[2, 2]" class="form-control" placeholder="mm-dd"
+        [(ngModel)]="date3" />
     </div>
-    <pre>num3: {{ num3 }}</pre>
+    <pre>date1: {{ date1 }}</pre>
+    <pre>date2: {{ date2 }}</pre>
+    <pre>date3: {{ date3 }}</pre>
   </div>
 </div>
 <hr />
