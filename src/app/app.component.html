@@ -21,11 +21,15 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="text-center mb-10">
-      <h2>使用带小数点的数字</h2>
-      <p>numeral: true, numeralDecimalScale: 4, delimiter: ','</p>
-      <input cleave [numeral]="true" [numeralDecimalScale]="4" [delimiter]="','"  class="form-control" placeholder="100.0000" [(ngModel)]="num1" />
+      <h2>使用带小数点的数字，默认2位</h2>
+      <p>numeral: true, numeralDecimalScale: 4</p>
+      <p>numeral: true, delimiter: ','</p>
+      <input cleave [numeral]="true" [numeralDecimalScale]="4" class="form-control" placeholder="100.0000" [(ngModel)]="num1" />
+      <input cleave [numeral]="true" class="form-control" placeholder="100.00 默认2位" [(ngModel)]="dec" />
+
     </div>
     <pre>num1: {{ num1 }}</pre>
+    <pre>dec: {{ dec }}</pre>
   </div>
 </div>
 <hr />
@@ -36,7 +40,7 @@
       <h2>纯数字</h2>
       <p>numeral: true, numericOnly: true</p>
 
-      <input cleave [numeral]="true" [numericOnly]="true" [maxLength]="11"
+      <input cleave [numeral]="true" [numericOnly]="true"
         class="form-control" placeholder="1,234,567,890" [(ngModel)]="num2"/>
       </div>
       <pre>num2: {{ num2 }}</pre>
@@ -47,14 +51,32 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="text-center mb-10">
-      <h2>带小数点的数字</h2>
-      <p>blocks: [2, 2, 3]<br>delimiters: ['.', '#']</p>
-
-      <input cleave [numeralDecimalMark]="'.'"  [numeralDecimalScale]="2" class="form-control" placeholder="234.89" [(ngModel)]="decimal"/>
-      </div>
-      <pre>decimal: {{ decimal }}</pre>
+      <h2>自定义分隔符和使用blocks</h2>
+      <p>模拟手机号</p>
+      <p>numericOnly: true, blocks: [3, 4, 4], delimiter: ' '</p>
+      <input cleave [numericOnly]="true" [blocks]="[3, 4, 4]" [delimiter]="' '"
+        class="form-control" placeholder="131 8899 7766" [(ngModel)]="num3"
+      />
+    </div>
+    <pre>num3: {{ num3 }}</pre>
   </div>
 </div>
+<hr />
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="text-center mb-10">
+      <h2>日期</h2>
+      <p>模拟手机号</p>
+      <p>numericOnly: true, blocks: [3, 4, 4], delimiter: ' '</p>
+      <input cleave [numericOnly]="true" [blocks]="[3, 4, 4]" [delimiter]="' '" class="form-control" placeholder="131 8899 7766"
+        [(ngModel)]="num3" />
+    </div>
+    <pre>num3: {{ num3 }}</pre>
+  </div>
+</div>
+<hr />
+
 
 
 

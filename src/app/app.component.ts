@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   num1: number;             // 带小数点的数字
+  dec: number;
   num2: number;             // 纯数字
+  num3: string;             // 使用blocks 手机号
   // // money = 1233344;
   // // option1 = JSON.stringify({
   // //   // numeral: true,
