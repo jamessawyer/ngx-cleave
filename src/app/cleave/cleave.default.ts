@@ -62,7 +62,7 @@ static assign(target: any = {}, opts: CleaveOptions = {}): any {
                 (opts.date ? '/' :
                     (opts.numeral ? ',' : ' ')
                 );
-        console.log('目标target.delimiter。。。', target.delimiter);
+        console.log('目标target.initValue。。。', target.initValue);
         target.delimiterLength = target.delimiter.length;
         target.delimiters = opts.delimiters || [];
         target.blocks = opts.blocks || [];

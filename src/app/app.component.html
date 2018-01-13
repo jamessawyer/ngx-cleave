@@ -1,89 +1,108 @@
-<!--  数字相关  -->
-<!-- <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="text-center mb-10">
-      <h2>使用带小数点的数字，默认2位</h2>
-      <p>numeral: true, numeralDecimalScale: 4</p>
-      <p>numeral: true, delimiter: ','</p>
-      <input cleave [numeral]="true" [numeralDecimalScale]="4" class="form-control" placeholder="100.0000" [(ngModel)]="num1" />
-      <input cleave [numeral]="true" class="form-control" placeholder="100.00 默认2位" [(ngModel)]="dec" />
-
-    </div>
-    <pre>num1: {{ num1 }}</pre>
-    <pre>dec: {{ dec }}</pre>
-  </div>
-</div>
-<hr />
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="text-center mb-10">
-      <h2>纯数字</h2>
-      <p>numeral: true, numericOnly: true</p>
-
-      <input cleave [numeral]="true" [numericOnly]="true"
-        class="form-control" placeholder="1,234,567,890" [(ngModel)]="num2"/>
+<section class="number">
+  <!--  数字相关  -->
+  <div class="row">
+    <div class="">
+      <div class="text-center mb-10">
+        <h2>使用带小数点的数字，默认2位</h2>
+        <p>numeral: true, numeralDecimalScale: 4</p>
+        <p>numeral: true, delimiter: ','</p>
+        <input cleave [numeral]="true" [numeralDecimalScale]="4" class="form-control" placeholder="100.0000" [(ngModel)]="num1" />
+        <input cleave [numeral]="true" class="form-control" placeholder="100.00 默认2位" [(ngModel)]="dec" />
+  
       </div>
-      <pre>num2: {{ num2 }}</pre>
+      <pre>num1: {{ num1 }}</pre> 
+      <pre>dec: {{ dec }}</pre>
+    </div>
   </div>
-</div>
-<hr />
+  <hr />
+  
+  <div class="row">
+    <div class="">
+      <div class="text-center mb-10">
+        <h2>纯数字</h2>
+        <p>numeral: true, numericOnly: true</p>
+  
+        <input cleave [numeral]="true" [numericOnly]="true"
+          class="form-control" placeholder="1,234,567,890" [(ngModel)]="num2"/>
+        </div>
+        <pre>num2: {{ num2 }}</pre>
+    </div>
+  </div>
+  <hr />
+  
+  <div class="row">
+    <div class="">
+      <div class="text-center mb-10">
+        <h2>自定义分隔符和使用blocks</h2>
+        <p>模拟手机号</p>
+        <p>numericOnly: true, blocks: [3, 4, 4], delimiter: ' '</p>
+        <input cleave [numericOnly]="true" [blocks]="[3, 4, 4]" [delimiter]="' '"
+          class="form-control" placeholder="131 8899 7766" [(ngModel)]="num3"
+        />
+      </div>
+      <pre>num3: {{ num3 }}</pre>
+    </div>
+  </div>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="text-center mb-10">
-      <h2>自定义分隔符和使用blocks</h2>
-      <p>模拟手机号</p>
-      <p>numericOnly: true, blocks: [3, 4, 4], delimiter: ' '</p>
-      <input cleave [numericOnly]="true" [blocks]="[3, 4, 4]" [delimiter]="' '"
-        class="form-control" placeholder="131 8899 7766" [(ngModel)]="num3"
-      />
-    </div>
-    <pre>num3: {{ num3 }}</pre>
-  </div>
-</div>
-<hr /> -->
+</section>
 
-<!--  date相关  -->
-<!-- <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="text-center mb-10">
-      <h2>日期</h2>
-      <p>由于未知bug，这里必须要再次声明一次 delimiter blocks/p>
-      <p>年/月/日: delimiter: '/', blocks: [4, 2, 2]</p>
-      <p>年-月: delimiter: '-', blocks: [4, 2], datePattern: ['Y', 'm']</p>
-      <p>月-日： delimiter: '-', blocks: [2, 2], datePattern: ['m', 'd']</p>
-      <input cleave [date]="true" [delimiter]="'/'" [blocks]="[4, 2, 2]" class="form-control" placeholder="YYYY/mm/dd"
-        [(ngModel)]="date1" />  
-      <input cleave [date]="true" [datePattern]="['Y', 'm']" [delimiter]="'-'" [blocks]="[4, 2]" class="form-control" placeholder="YYYY-mm"
-        [(ngModel)]="date2" />  
-      <input cleave [date]="true" [datePattern]="['m', 'd']" [delimiter]="'-'" [blocks]="[2, 2]" class="form-control" placeholder="mm-dd"
-        [(ngModel)]="date3" />
+
+<section class="date">
+  <!--  date相关  -->
+  <div class="row">
+    <div class="">
+      <div class="text-center mb-10">
+        <h2>日期</h2>
+        <p>由于未知bug，这里必须要再次声明一次 delimiter blocks</p>
+        <p>年/月/日: delimiter: '/', blocks: [4, 2, 2]</p>
+        <p>年-月: delimiter: '-', blocks: [4, 2], datePattern: ['Y', 'm']</p>
+        <p>月-日： delimiter: '-', blocks: [2, 2], datePattern: ['m', 'd']</p>
+        <input cleave [date]="true" [delimiter]="'/'" [blocks]="[4, 2, 2]" class="form-control" placeholder="YYYY/mm/dd"
+          [(ngModel)]="date1" />  
+        <input cleave [date]="true" [datePattern]="['Y', 'm']" [delimiter]="'-'" [blocks]="[4, 2]" class="form-control" placeholder="YYYY-mm"
+          [(ngModel)]="date2" />  
+        <input cleave [date]="true" [datePattern]="['m', 'd']" [delimiter]="'-'" [blocks]="[2, 2]" class="form-control" placeholder="mm-dd"
+          [(ngModel)]="date3" />
+      </div>
+      <pre>date1: {{ date1 }}</pre>
+      <pre>date2: {{ date2 }}</pre>
+      <pre>date3: {{ date3 }}</pre>
     </div>
-    <pre>date1: {{ date1 }}</pre>
-    <pre>date2: {{ date2 }}</pre>
-    <pre>date3: {{ date3 }}</pre>
   </div>
-</div>
-<hr /> -->
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="text-center mb-10">
-      <h2>银行卡信用卡</h2>
-      <p>由于未知bug，这里必须要再次声明一次 delimiter blocks</p>
-      <p>一般卡都是16位: creditCard: true, blocks: [4, 4, 4, 4], delimiter: ' '</p>
-      <p>有的卡是19位: creditCard: true, blocks: [4, 4, 4, 7], delimiter: ' ', creditCardStrictMode: true</p>
-      <input cleave [creditCard]="true"  [blocks]="[4, 4, 4, 4]" [delimiter]="' '"  class="form-control" placeholder="6666 6666 6666 6666"
-        [(ngModel)]="card1" />  
-      <input cleave [creditCard]="true" [creditCardStrictMode]="true" [blocks]="[4, 4, 4, 7]" [delimiter]="' '" 
-        class="form-control" placeholder="6666 6666 6666 6666666"
-        [(ngModel)]="card2" />  
+</section>
+
+<section class="card">
+  <div class="row">
+    <div class="">
+      <div class="text-center mb-10">
+        <h2>银行卡信用卡</h2>
+        <p>由于未知bug，这里必须要再次声明一次 delimiter blocks</p>
+        <p>一般卡都是16位: creditCard: true, blocks: [4, 4, 4, 4], delimiter: ' '</p>
+        <p>有的卡是19位: creditCard: true, blocks: [4, 4, 4, 7], delimiter: ' ', creditCardStrictMode: true</p>
+        <input cleave [creditCard]="true"  [blocks]="[4, 4, 4, 4]" [delimiter]="' '"  class="form-control" placeholder="6666 6666 6666 6666"
+          [(ngModel)]="card1" />  
+        <input cleave [creditCard]="true" [creditCardStrictMode]="true" [blocks]="[4, 4, 4, 7]" [delimiter]="' '" 
+          class="form-control" placeholder="6666 6666 6666 6666666"
+          [(ngModel)]="card2" />  
+      </div>
+      <pre>card1: {{ card1 }}</pre>
+      <pre>card2: {{ card2 }}</pre>
     </div>
-    <pre>card1: {{ card1 }}</pre>
-    <pre>card2: {{ card2 }}</pre>
   </div>
-</div>
-<hr />
+  <hr />
+  <div class="row">
+    <div class="">
+      <div class="text-center mb-10">
+        <h2>银行卡信用卡</h2>
+        <p>由于未知bug，这里必须要再次声明一次 delimiter blocks</p>
+        <p>使用 [options] 输入属性的方式 不必将属性都写在一起</p>
+        <input cleave [options]="cardOption1" class="form-control" placeholder="6666 6666 6666 6666"
+          [(ngModel)]="card3" />  
+      </div>
+      <pre>card3: {{ card3 }}</pre>
+    </div>
+  </div>
+</section>
 
 
 

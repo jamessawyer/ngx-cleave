@@ -4,3 +4,20 @@ input {
     font-weight: 600;
     color: #333;
 }
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+.number {
+    background: #dcdcdc;
+}
+.date {
+    background: #eef3f5;
+}
+.card {
+    background: #f2f2f2;
+}
