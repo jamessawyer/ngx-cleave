@@ -1,3 +1,4 @@
+<!--  数字相关  -->
 <!-- <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="text-center mb-10">
@@ -43,7 +44,8 @@
 </div>
 <hr /> -->
 
-<div class="row">
+<!--  date相关  -->
+<!-- <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="text-center mb-10">
       <h2>日期</h2>
@@ -61,6 +63,24 @@
     <pre>date1: {{ date1 }}</pre>
     <pre>date2: {{ date2 }}</pre>
     <pre>date3: {{ date3 }}</pre>
+  </div>
+</div>
+<hr /> -->
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="text-center mb-10">
+      <h2>银行卡信用卡</h2>
+      <p>由于未知bug，这里必须要再次声明一次 delimiter blocks</p>
+      <p>一般卡都是16位: creditCard: true, blocks: [4, 4, 4, 4], delimiter: ' '</p>
+      <p>有的卡是19位: creditCard: true, blocks: [4, 4, 4, 7], delimiter: ' ', creditCardStrictMode: true</p>
+      <input cleave [creditCard]="true"  [blocks]="[4, 4, 4, 4]" [delimiter]="' '"  class="form-control" placeholder="6666 6666 6666 6666"
+        [(ngModel)]="card1" />  
+      <input cleave [creditCard]="true" [creditCardStrictMode]="true" [blocks]="[4, 4, 4, 7]" [delimiter]="' '" 
+        class="form-control" placeholder="6666 6666 6666 6666666"
+        [(ngModel)]="card2" />  
+    </div>
+    <pre>card1: {{ card1 }}</pre>
+    <pre>card2: {{ card2 }}</pre>
   </div>
 </div>
 <hr />
